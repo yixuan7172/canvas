@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    let line = ctx.createLinearGradient(0, 50, 0, 95)
+    line.addColorStop(0, 'red')
+    line.addColorStop(0.5, 'white')
+    line.addColorStop(0.5, 'blue')
+    line.addColorStop(1, 'green')
+
+    let line2 = ctx.createLinearGradient(0, 0, 0, 150)
+    line2.addColorStop(0.5, 'black')
+    line2.addColorStop(1, 'white')
+
+    ctx.fillStyle = line
+    ctx.strokeStyle = line2
+
+    ctx.fillRect(10, 10, 130, 130)
+    ctx.strokeRect(50, 50, 50, 50)
+</script>

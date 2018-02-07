@@ -30,4 +30,19 @@
    * fillStyle
    * strokeStyle
    * globalAlpha 设置透明度
-   * 
+
+   * 设置线的样式
+     * lineWidth 
+     * lineCap 设置线条末端样式
+     * lineJoin 设定线条与线条间接合处的样式
+     * miterLimit 限制当两条线相交时交接处最大长度
+     * getLineDash() 返回一个包含当前虚线样式，长度为非负偶数的数组
+     * setLineDash(segments) 设置当前虚线样式。
+        * eg:segments:[x,y]，x:虚线宽度  y:虚线间距离
+     * lineDashOffset 设置虚线样式的起始偏移量
+     
+ * 渐变 Gradients
+   * createLinearGradient(x1, y1, x2, y2) 表示渐变的起点 (x1,y1) 与终点 (x2,y2)。返回一个gradient。
+   * createRadialGradient(x1, y1, r1, x2, y2, r2) 前三个定义一个以 (x1,y1) 为原点，半径为 r1 的圆，后三个参数则定义另一个以 (x2,y2) 为原点，半径为 r2 的圆
+   * gradient.addColorStop(position, color) position 参数必须是一个 0.0 与 1.0 之间的数值，表示渐变中颜色所在的相对位置；color 参数必须是一个有效的 CSS 颜色值。
+   
