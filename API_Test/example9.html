@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+    let lineCap = ['butt', 'round', 'square']
+    ctx.strokeStyle = 'red'
+    ctx.beginPath()
+    ctx.moveTo(10, 10)
+    ctx.lineTo(140, 10)
+    ctx.moveTo(10, 140)
+    ctx.lineTo(140, 140)
+    ctx.stroke()
+    ctx.strokeStyle = 'blue'
+    for (let i = 0; i < lineCap.length; i++) {
+        ctx.lineWidth = 15
+        ctx.lineCap = lineCap[i]
+        ctx.beginPath()
+        ctx.moveTo(i * 50 + 25, 10)
+        ctx.lineTo(i * 50 + 25, 140)
+        ctx.stroke()
+    }
+
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    for (let i = 0; i < 10; i++) {
+        ctx.lineWidth = i + 1
+        ctx.beginPath()
+        ctx.moveTo(5 + i * 14, 5)
+        ctx.lineTo(5 + i * 14, 140)
+        ctx.stroke()
+    }
+
+</script>

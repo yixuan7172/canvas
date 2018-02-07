@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    let rect = new Path2D()
+    rect.rect(10, 10, 50, 50)
+
+    let circle = new Path2D()
+    circle.moveTo(125, 35)
+    circle.arc(100, 35, 25, 0, Math.PI * 2, true)
+
+    ctx.stroke(rect)
+    ctx.globalAlpha = 0.1
+    ctx.fill(circle)
+
+</script>
