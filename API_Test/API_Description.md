@@ -80,6 +80,7 @@
       * drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
        其它8个参数，前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小。
        *  mozImageSmoothingEnabled   值为 false 时，图像不会平滑地缩放。默认是 true 。
+       * globalCompositeOperation   改变层级关系
        
     * 变形
       * save() restore()  save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。当save()方法被调用后，当前的状态就被推送到栈中保存。调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。
@@ -99,5 +100,6 @@
     * 裁切路径
       * clip()
 
-
+    * 动画
+      
 
