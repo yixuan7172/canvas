@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    for (let i = 0; i < 6; i++) {
+        ctx.save()
+        ctx.fillStyle = 'rgb(' + (51 * i) + ',' + (255 - 51 * i) + ')'
+
+        for(let j=0;j<i*6;j++){
+            ctx.rotate(Math.PI*2/(i*6))
+            ctx.beginPath()
+            ctx.arc(0,i*12,5,0,Math.PI*2,true)
+            ctx.fill()
+        }
+        // ctx.restore()
+    }
+</script>

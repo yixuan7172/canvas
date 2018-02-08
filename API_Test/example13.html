@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    let radGrad = ctx.createRadialGradient(45, 45, 10, 52, 50, 30)
+    radGrad.addColorStop(0, 'blue')
+    radGrad.addColorStop(0.9, 'red')
+    radGrad.addColorStop(1, '#000')
+
+    let radGrad2 = ctx.createRadialGradient(105, 105, 20, 112, 120, 50)
+    radGrad2.addColorStop(0, '#ff5f98')
+    radGrad2.addColorStop(0.75, '#ff0188')
+    radGrad2.addColorStop(1, 'rgba(255,1,136,0)')
+
+    let radGrad3 = ctx.createRadialGradient(95, 15, 15, 102, 20, 40)
+    radGrad3.addColorStop(0, '#00c9ff')
+    radGrad3.addColorStop(0.8, '#e4c700')
+    radGrad3.addColorStop(1, 'green')
+
+    ctx.fillStyle = radGrad3
+    ctx.fillRect(0, 0, 150, 150)
+    ctx.fillStyle = radGrad2
+    ctx.fillRect(0, 0, 150, 150)
+    ctx.fillStyle = radGrad
+    ctx.fillRect(0, 0, 150, 150)
+
+</script>

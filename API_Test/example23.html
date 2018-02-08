@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    ctx.beginPath()
+    ctx.moveTo(20,20)
+    ctx.lineTo(200,20)
+    ctx.lineTo(120,120)
+    ctx.closePath()
+    ctx.stroke()
+    ctx.clearRect(10,10,100,100)
+</script>

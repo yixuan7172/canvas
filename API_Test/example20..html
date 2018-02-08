@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+    let img = new Image()
+    img.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg'
+    img.onload=function () {
+        for (let i=0;i<4;i++){
+            for(let j=0;j<3;j++){
+                ctx.drawImage(img,j*50,i*38,50,38)
+            }
+        }
+    }
+
+
+</script>

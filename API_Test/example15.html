@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    ctx.shadowOffsetX = ctx.shadowOffsetY = 5
+    ctx.shadowBlur = 4
+    ctx.shadowColor = 'rgba(0,0,0,.5)'
+
+    ctx.font = '20px Times New Roman'
+    ctx.fillStyle = 'black'
+    ctx.fillText('sample string', 5, 30)
+
+</script>
