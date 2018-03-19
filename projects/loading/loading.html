@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+</body>
+
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    let context = canvas.getContext('2d')
+    let centerX = canvas.width / 2,
+        centerY = canvas.height / 2
+    let rad = Math.PI * 2 / 100
+    let speed = .1
+
+    function text(n) {
+        context.save()
+        context.fillStyle = '#f00'
+        context.textAlign = 'center'
+        context.textBaseline = 'middle'
+        context.font = '40px Arial'
+        context.fillText(n.toFixed(0) + '%', centerX, centerY)
+        context.restore()
+    }
+
+    function circle(n) {
+        context.save()
+        context.beginPath()
+        context.strokeStyle = '#525252'
+        context.lineWidth = 10
+        context.arc(centerX, centerY, 100, -Math.PI / 2, -Math.PI / 2 + n * rad, false)
+        context.stroke()
+        context.restore()
+    }
+
+    function whiteCircle() {
+        context.save()
+        context.beginPath()
+        context.strokeStyle = '#f19'
+        context.lineWidth = 10
+        context.arc(centerX, centerY, 100, 0, Math.PI * 2, true)
+        context.stroke()
+        context.closePath()
+        context.restore()
+    }
+
+    function animate() {
+        requestAnimationFrame(animate)
+        //清除矩形框，否则百分比全重复到一起
+        context.clearRect(0, 0, canvas.width, canvas.height)
+        whiteCircle()
+        text(speed)
+        circle(speed)
+        if (speed > 100) speed = 0
+        speed += .1
+    }
+
+    animate()
+</script>
