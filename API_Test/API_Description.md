@@ -2,7 +2,7 @@
 # 绘制路径
   * beginPath() 新建一条路径
   * closePath() 闭合一条路径
-  * stroke() 通过线条来绘制图形轮廓
+  * stroke() 绘制出通过 moveTo() 和 lineTo() 方法定义的路径
   * fill() 填充路径内容，生成实心图形
   * lineTo() 绘制直线
   * 路径填充fill()路径自动闭合，stroke()不会闭合路径，需要closePath()
@@ -28,14 +28,23 @@
   * Path2D.rect()
 
 # 色彩 Colors
-  * fillStyle
-  * strokeStyle
-  * globalAlpha 设置透明度
+  * fillStyle 填充颜色
+  * strokeStyle 线框颜色
+  * globalAlpha 设置透明度,0-1.0，默认1.0
 
   * 设置线的样式
-   * lineWidth
+    * lineWidth 线宽
+
     * lineCap 设置线条末端样式
-    * lineJoin 设定线条与线条间接合处的样式
+      * butt：默认。向线条的每个末端添加平直的边缘。
+      * round	向线条的每个末端添加圆形线帽。
+      * square	向线条的每个末端添加正方形线帽。
+
+    * lineJoin 线条拐角
+      * miter	默认。创建尖角。
+      * bevel	创建斜角。
+      * round	创建圆角。
+     
     * miterLimit 限制当两条线相交时交接处最大长度
     * getLineDash() 返回一个包含当前虚线样式，长度为非负偶数的数组
     * setLineDash(segments) 设置当前虚线样式。
@@ -48,7 +57,8 @@
   * gradient.addColorStop(position, color) position 参数必须是一个 0.0 与 1.0 之间的数值，表示渐变中颜色所在的相对位置；color 参数必须是一个有效的 CSS 颜色值。
 
 # 图案样式 Patterns
-  * createPattern(image, type) Image 可以是一个 Image 对象的引用，或者另一个 canvas 对象。Type 必须是下面的字符串值之一：repeat，repeat-x，repeat-y 和 no-repeat。
+  * createPattern(image, type) Image 可以是一个 Image 对象的引用，或者另一个 canvas 对象。
+                                Type 必须是下面的字符串值之一：repeat，repeat-x，repeat-y 和 no-repeat。
 
 # 阴影 Shadows
   * shadowOffsetX = float，shadowOffsetY = float   设定阴影在 X 和 Y 轴的延伸距离，它们是不受变换矩阵所影响的。正值则表示会往下或右延伸，它们默认都为 0。
@@ -69,8 +79,8 @@
 
 # 绘制文本
   * fillText(text, x, y [, maxWidth])  在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的。
-  * strokeText(text, x, y [, maxWidth])  在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的。
-  * font    和 CSS font 属性相同的语法. 默认的字体是 10px sans-serif。
+  * strokeText(text, x, y [, maxWidth])  在指定的(x,y)位置绘制文**本边框**，绘制的最大宽度是可选的。
+  * font和CSS font 属性相同的语法. 默认的字体是 10px sans-serif。
   * textAlign  可选的值包括：start, end, left, right or center. 默认值是 start。
   * textBaseline    基线对齐选项. 可选的值包括：top, hanging, middle, alphabetic, ideographic, bottom。默认值是 alphabetic。
   * direction   文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。
