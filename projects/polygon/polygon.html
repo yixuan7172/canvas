@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多边形</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+</html>
+<script>
+    const canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+    canvas.width = innerWidth
+    canvas.height = innerHeight
+    canvas.style.backgroundColor = '#000'
+
+    function createPolygon(n, dx, dy, size) {
+        const dig = Math.PI / n * 4
+        ctx.beginPath()
+        ctx.fillStyle = '#f00'
+        ctx.moveTo(dx, size + dy)
+        for(let i = 0; i < n; i++) {
+            let x = Math.sin(i * dig),
+                y = Math.cos(i * dig)
+            ctx.lineTo(x * size + dx, y * size + dy)
+        }
+        ctx.closePath()
+        ctx.fill()
+    }
+
+    createPolygon(5, 500, 500, 50)
+</script>
