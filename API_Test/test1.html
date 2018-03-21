@@ -14,27 +14,6 @@
 </body>
 </html>
 <script>
-    // var myCanvas = document.getElementById("canvas");
-    // myCanvas.width = "500";
-    // myCanvas.height = "300";
-    //
-    // var cxt = myCanvas.getContext("2d");
-    //
-    // //添加图片
-    // var img = new Image();
-    //
-    // img.onload = function() {
-    //     cxt.drawImage(img, 85, 40);
-    // }
-    // //添加文字
-    // cxt.font = "30px Arial";
-    //
-    // cxt.fillStyle = "red";
-    // cxt.fillText("我女朋友", 380, 290);
-    //
-    // cxt.strokeStyle = "red";
-    // cxt.strokeText("我女朋友", 380, 290);
-
     // let canvas = document.getElementById('canvas')
     // let ctx = canvas.getContext('2d')
     // ctx.beginPath()
@@ -74,8 +53,76 @@
     // ctx.scale(2, 2)
     // ctx.rotate(Math.PI / 6)
     // ctx.strokeRect(10, 10, 50, 50)
-    ctx.beginPath()
-    ctx.arc(10,10,10,0,Math.PI*2,false)
-    ctx.closePath()
-    ctx.fill()
+    // ctx.beginPath()
+    // ctx.arc(10,10,10,0,Math.PI*2,false)
+    // ctx.closePath()
+    // ctx.fill()
+
+
+    // ctx.rect(10, 10, 100, 100);
+    // ctx.stroke();
+    // console.log(ctx.isPointInPath(11, 11)); // true
+
+    // ctx.save();  //保存当前canvas的状态
+    // ctx.beginPath()
+    // ctx.translate(100, 100);
+    // ctx.arc(50, 50, 50, 0, Math.PI * 2, false);
+    // ctx.closePath()
+    // ctx.fill()
+    // ctx.restore();  //恢复保存的Canvas的状态
+    // // ctx.save()
+    // ctx.beginPath()
+    // ctx.arc(50, 50, 50, 0, Math.PI * 2, false);
+    // ctx.closePath()
+    // ctx.fill()
+
+    // var canvas;
+    // var ctx;
+
+    function draw() {
+
+        ctx.fillStyle = '#FA6900';
+        ctx.shadowOffsetX = 5;
+        ctx.shadowOffsetY = 5;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = 'rgba(204, 204, 204, 0.5)';
+        ctx.fillRect(0, 0, 15, 150);
+        ctx.save();//first
+
+        ctx.fillStyle = '#E0E4CD';
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = 'rgba(204, 204, 204, 0.5)';
+        ctx.fillRect(30, 0, 30, 150);
+        ctx.save();//second
+
+        ctx.fillStyle = '#A7DBD7';
+        ctx.shadowOffsetX = 15;
+        ctx.shadowOffsetY = 15;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = 'rgba(204, 204, 204, 0.5)';
+        ctx.fillRect(90, 0, 45, 150);
+        ctx.save();//third
+
+        ctx.restore();
+        ctx.beginPath();
+        ctx.arc(185, 75, 22, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.restore();
+        ctx.beginPath();
+        ctx.arc(260, 75, 15, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.restore();
+        ctx.beginPath();
+        ctx.arc(305, 75, 8, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    draw();
 </script>
