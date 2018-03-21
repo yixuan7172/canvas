@@ -1,3 +1,5 @@
+# 绘制步骤：
+  * ![](https://github.com/yixuan7172/canvas/blob/master/API_Test/img/canvas%E6%AD%A5%E9%AA%A4)
 # API说明
 # 绘制路径
   * beginPath() 新建一条路径
