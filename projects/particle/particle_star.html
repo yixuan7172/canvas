@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Particle</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
+<body onload="init()">
+<canvas id="canvas"></canvas>
+</body>
+</html>
+<script>
+    let canvas = document.getElementById('canvas')
+    canvas.width = innerWidth
+    canvas.height = innerHeight
+    canvas.style.backgroundColor = 'black'
+    let ctx = canvas.getContext('2d')
+    let particles = []
+
+    function Round_item(x, y) {
+        this.x = x
+        this.y = y
+        this.r = Math.random() * 2 + 1
+        //(~~(Math.random() * 10) + 1)  =>  1--10
+        let alpha = (~~(Math.random() * 10) + 1) / 10 / 2
+        this.color = 'rgba(255,255,255,' + alpha + ')'
+    }
+
+    Round_item.prototype = {
+        constructor: Round_item,
+        draw: function() {
+            ctx.fillStyle = 'white'
+            ctx.shadowBlur = this.r * 5
+            ctx.beginPath()
+            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false)
+            ctx.closePath()
+            ctx.fill()
+        },
+        move() {
+            this.y += 1
+            if(this.y > 2000) this.y = 0
+            this.draw()
+        }
+    }
+
+    function init() {
+        for(let i = 0; i < 100; i++) {
+            particles[i] = new Round_item(Math.random() * innerWidth, Math.random() * innerHeight)
+            particles[i].draw()
+        }
+        animate()
+    }
+
+    function animate() {
+        requestAnimationFrame(animate)
+        ctx.clearRect(0, 0, innerWidth, innerHeight)
+        particles.forEach(val => {
+            val.move()
+        })
+    }
+</script>

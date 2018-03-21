@@ -99,8 +99,18 @@
     * 这些源统一由 CanvasImageSource类型来引用。
     * drawImage(image, x, y)  绘制图片，image 是 image 或者 canvas 对象，x 和 y 是其在目标 canvas 里的起始坐标。
     * drawImage(image, x, y, width, height)  width 和 height，这两个参数用来控制 当向canvas画入时应该缩放的大小。
-    * drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+    * drawImage(img, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
        其它8个参数，前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小。
+       * img:规定要使用的图像、画布或视频。
+       * sx:可选。开始剪切的 x 坐标位置。
+       * sy:可选。开始剪切的 y 坐标位置。
+       * sWidth:可选。被剪切图像的宽度。
+       * sHeight:可选。被剪切图像的高度。
+       * dx:在画布上放置图像的 x 坐标位置。
+       * dy:在画布上放置图像的 y 坐标位置。
+       * dWidth:可选。要使用的图像的宽度。（伸展或缩小图像）
+       * dHeight:可选。要使用的图像的高度。（伸展或缩小图像）
+
     *  mozImageSmoothingEnabled   值为 false 时，图像不会平滑地缩放。默认是 true 。
     * globalCompositeOperation   改变层级关系
 
@@ -124,7 +134,7 @@
     * translate(x, y)
 
   * 旋转
-    * rotate(angle)
+    * rotate(弧度)
 
   * 缩放
     * scale(x, y)  值比 1.0 小表示缩小，比 1.0 大则表示放大。
