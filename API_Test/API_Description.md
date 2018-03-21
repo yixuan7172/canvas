@@ -6,9 +6,11 @@
   * fill() 填充路径内容，生成实心图形
   * lineTo() 绘制直线
   * 路径填充fill()路径自动闭合，stroke()不会闭合路径，需要closePath()
+  * isPointInPath()	如果指定的点位于当前路径中，则返回 true，否则返回 false
 
 # 绘制圆弧及贝塞尔曲线
-  * arc()、arcTo() 绘制圆弧
+  * arc()   画圆
+  * arcTo() 创建两切线之间的弧/曲线
   * quadraticCurveTo(cp1x, cp1y, x, y) 绘制二次贝塞尔曲线，cp1x,cp1y为一个控制点，x,y为结束点
   * bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y) 绘制三次贝塞尔曲线，cp1x,cp1y为控制点一，cp2x,cp2y为控制点二，x,y为结束点
 
